@@ -25,7 +25,7 @@ App = React.createClass({
         <div id="body">
           <div id="left">
             <div id="top-left">
-             <HourForm/>
+             <HourForm />
             </div>
            <div id="bottom-left">
              bottom left
