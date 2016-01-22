@@ -4,9 +4,9 @@ Meteor.methods({
   // Function insertHour takes 2 parameters, the number of hours and the date
   insertHour: function(hours, date) {
     // Parse the first parameter to make sure it is an int
-    parseInt(hours, 10);
+    parseInt(hours, 10)
     // Use the check function to ensure that the first parameter is a number
-    check(hours, Number);
+    check(hours, Number)
     // Use the check function to ensure that the second parameter is a date
     check(date, Date)
     // Return the insert function (add a key value pair consisting of the first and second parameter into the Hours collection)
