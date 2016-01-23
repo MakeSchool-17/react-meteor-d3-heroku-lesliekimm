@@ -33,17 +33,26 @@ App = React.createClass({
                 </div>
               </div>
 
-              <div id="bottom-left">
-                <p className="text-center">bottom left</p>
+              <div className="panel panel-info">
+                <div className="panel-heading">
+                  <h3 className="panel-title">Hours History</h3>
+                </div>
+                <div className="panel-body">
+                  <HourList data={this.data.data} /> 
+                </div>
               </div>
             </div>
       
             <div className="col-md-8">
-              <p className="text-center">right</p>
+              <div className="panel panel-info">
+                <div className="panel-body">
+                  pretty chart
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      );
+    );
   }
 }); 

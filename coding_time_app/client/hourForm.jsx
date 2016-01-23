@@ -1,6 +1,5 @@
 //Give your component a name called HourForm - use React.createClass to create the object
 HourForm = React.createClass({
-
   handleSubmit: function(e) {
     // Use the preventDefault function on the passed in event
     e.preventDefault();
@@ -18,7 +17,6 @@ HourForm = React.createClass({
         console.log(error)
       }
     })
-    console.log(hoursInput.value, date.value);
     // Reset the input values to empty strings
     hoursInput.value = '';
     dateInput.value = '';
