@@ -18,7 +18,7 @@ HourForm = React.createClass({
         console.log(error)
       }
     })
-    console.log(hoursInput.value, date);
+    console.log(hoursInput.value, date.value);
     // Reset the input values to empty strings
     hoursInput.value = '';
     dateInput.value = '';
@@ -27,10 +27,18 @@ HourForm = React.createClass({
     // Return your JSX within brackets - the HTML should display a simple form with 
     // 2 input elements and a submit button
     return (
-      <form className="hourForm" onSubmit={this.handleSubmit}>
-        <input type="text" placeholder="No. of Hours" ref="hours" />
-        <input type="date" placeholder="MM/DD/YY" ref="date" />
-        <input type="submit" value="Submit" />
+      <form onSubmit={this.handleSubmit}>
+        <div className="form-group">
+          <label htmlFor="hoursInput">Number of Hours</label>
+          <input className="form-control" type="text" placeholder="No. of Hours" ref="hours" />
+        </div>
+        
+        <div className="form-group">
+          <label htmlFor="dateInput">Date</label>
+          <input className="form-control" type="date" placeholder="MM/DD/YY" ref="date" />
+        </div>
+        
+        <input className="btn btn-primary btn-block" type="submit" value="Add Hours" />
       </form>     
     );
   }
