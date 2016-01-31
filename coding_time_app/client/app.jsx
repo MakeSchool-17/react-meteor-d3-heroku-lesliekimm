@@ -35,7 +35,7 @@ App = React.createClass({
 
               <div className="panel panel-info">
                 <div className="panel-heading">
-                  <h3 className="panel-title">Hours History</h3>
+                    <h3 className="panel-title">Hours History <small>Click to remove</small></h3> 
                 </div>
                 <div className="panel-body">
                   <HourList mainData={this.data.stuff} /> 
