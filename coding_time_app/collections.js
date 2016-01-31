@@ -1,3 +1,5 @@
+// SERVER SIDE CODE
+
 Hours = new Meteor.Collection("Hours");
 
 Meteor.methods({

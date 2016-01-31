@@ -4,9 +4,9 @@ HourList = React.createClass({
   renderHours: function() {   
     // Iterate over this.props.data using the map function. Return the loop
     // Return the HourItem component, pass hour and key to it. 
-    return this.props.data.map(function(data, i) {
+    return this.props.mainData.map(function(mainData, i) {
       return (
-        <HourItem data={data} key={i} />
+          <HourItem data={mainData} key={i} />
       );
     });
   },
@@ -15,7 +15,7 @@ HourList = React.createClass({
     // return the JSX using ()
     return (
       <div>
-        <ol>{this.renderHours()}</ol>
+        <ul>{this.renderHours()}</ul>
       </div>
     );
   }

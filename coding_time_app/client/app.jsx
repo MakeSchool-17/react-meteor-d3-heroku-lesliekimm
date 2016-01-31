@@ -8,7 +8,7 @@ App = React.createClass({
     // Get all data from the Hours collection
     return {
       // Use the Mongo Collection find method to get all data
-      data: Hours.find().fetch()
+      stuff: Hours.find().fetch()
     }
   },
   // Use React's render function and write some JSX (which uses regular HTML)
@@ -38,7 +38,7 @@ App = React.createClass({
                   <h3 className="panel-title">Hours History</h3>
                 </div>
                 <div className="panel-body">
-                  <HourList data={this.data.data} /> 
+                  <HourList mainData={this.data.stuff} /> 
                 </div>
               </div>
             </div>
