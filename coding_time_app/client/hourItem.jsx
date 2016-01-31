@@ -24,7 +24,7 @@ HourItem = React.createClass({
        	// Return a list item with an onClick handler. Let the item say "On DD/MM/YYYY coded ? hour/hours."
        	// Variables have to be accessed within curly brackets => {date}
        	return (
-       		<li onClick={this.handleClick}>On {date} coded {this.props.data.hours} hours</li>
+       		<li onClick={this.handleClick}>On <strong>{date}</strong> coded <strong>{this.props.data.hours}</strong> hours</li>
        	);
    	}
 });
