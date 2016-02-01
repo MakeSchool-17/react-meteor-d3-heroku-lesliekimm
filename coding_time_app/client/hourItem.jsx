@@ -1,30 +1,22 @@
-// Give your component a name called HourItem - use React.createClass to create the object
 HourItem = React.createClass({
-	// Write an event handler for the onClick event, called handleClick.
+	// Write an event handler for the onClick event
     handleClick: function() {
-    	// Store id in a variable. Access it from this.props.
-       	var id = this.props.data._id;
+       	var id = this.props.data._id;		// store id in a variable - access it from this.props
 
-       	// Use the Meteor method "call". Pass 'removeHour' as the first parameter, id as the second, 
-       	// a function alerting any errors as third parameter
+       	// Use Meteor's call function & pass anonymous callback as last param to alert if something goes wrong
        	Meteor.call('removeHour', id, function(error, result) {
        		if (error) {
-       			console.log(error)
+       			alert(error.reason)
        		}
        	})
    	},
 
-    // Obligatory render method
     render: function() {
-       	// Get the date from this.props.hour.date and format it to 'DD/MM/YYYY' using Moment. Store it in a variable.
-       	var date = moment(this.props.data.date).format('MM/DD/YYYY');
-       	// Determine if the end of the sentence should say hour or hours based on this.props.hour.hours. Store it in a variable.
-       	// sentEnd = CODE HERE
+       	var date = moment(this.props.data.date).format('MM/DD/YYYY');		// get date & format
+       	sentEnd = this.props.data.hours > 1 ? 'hours' : 'hour';				// determine if hour(s)
 
-       	// Return a list item with an onClick handler. Let the item say "On DD/MM/YYYY coded ? hour/hours."
-       	// Variables have to be accessed within curly brackets => {date}
        	return (
-       		<li onClick={this.handleClick}>On <strong>{date}</strong> coded <strong>{this.props.data.hours}</strong> hours</li>
+       		<li onClick={this.handleClick}>On <strong>{date}</strong> coded <strong>{this.props.data.hours}</strong> {sentEnd}.</li>
        	);
    	}
 });

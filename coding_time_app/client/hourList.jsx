@@ -1,19 +1,14 @@
-// Give your component a name called HourList - use React.createClass to create the object
 HourList = React.createClass({
     // Render the item component in a separate function
     renderHours: function() {   
-        // Iterate over this.props.data using the map function. Return the loop
-        // Return the HourItem component, pass hour and key to it. 
-        return this.props.mainData.map(function(mainData, i) {
+        return this.props.data.map(function(data, i) {  // iterate over this.props.data using map key
             return (
-                <HourItem data={mainData} key={i} />
+                <HourItem data={data} key={i} />        // return HourItem compoenent, pass hour & key to it
             );
         });
     },
 
-    // render the HourList JSX
     render: function() {    
-        // return the JSX using ()
         return (
             <div>
                 <ul>{this.renderHours()}</ul>
